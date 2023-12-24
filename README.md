@@ -23,19 +23,10 @@ sistema (Llamando a las APIs de Autenticacion). Una vez ingresado vamos a poder
 acceder a un ABM de personas la cual debe estar segurizada usando JWT.
 
 **Requisitos Tecnicos**
-- App en NetCore 6
+- App en NetCore 7 u 8
 - Uso de EntityFramework Core en toda la solución
 - La solución debe ser entregada en Github y compartida con el del profesor.
 
 **Opcional**
 - Implementar Logging en archivos
 - Implementar Automapper
-- Agregar validaciones Back End que crean pertinentes
-- Agregar Swagger
-- Agregar autenticacion con Swagger
-- Utilizar metodos asincronicos en controllers y repositorios
-- Otros conceptos aprendidos en el curso que crean pertinentes
-
-## Documentación
-1. Postman:
-2. Modelo DER:
