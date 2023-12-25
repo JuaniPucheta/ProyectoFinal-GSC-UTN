@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <h1>
+    <a routerLink="/" class="logo">
+      <img src="assets/logo.png" alt="Logo" />
+    </a>
+  </h1>
+
+  <span class="example-spacer"></span>
+
+  <ng-container *ngIf=checkRole()>
+    <button mat-icon-button (click)="createCategory()">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </ng-container>
+
+  <button mat-icon-button (click)="logout()">
+    <mat-icon>account_circle </mat-icon>
+  </button>
+
+</mat-toolbar>
