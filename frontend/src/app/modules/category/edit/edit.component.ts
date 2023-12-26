@@ -15,7 +15,7 @@ export class EditComponent implements OnInit {
   categoryForm !: FormGroup;
 
   constructor(
-    @Inject (MAT_DIALOG_DATA) public data: Category, 
+    @Inject (MAT_DIALOG_DATA) public data: Category,
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     private cS:CategoryService ) { }
@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
 
   editCategory(){
     this.cS.getOneCategory(this.categoryForm.value.description).subscribe({
-      next: (category: Category) => { // this category aleady exists
+      next: (category: Category) => {
         if (category.id != this.categoryForm.value.id) {
           this.dialog.open(AlertDialogComponent, {
             data: {
@@ -41,9 +41,9 @@ export class EditComponent implements OnInit {
         } else
         this.cS.editCategory(this.categoryForm.value).subscribe((response: any) => {});
       },
-      error: (err) => { // this category does not exist
+      error: (err) => { 
         this.cS.editCategory(this.categoryForm.value).subscribe((response: any) => {});
       }
-    });    
+    });
   }
 }

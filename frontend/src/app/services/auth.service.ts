@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
-  
+
   login(person: any){
     return this._http.post(environment.url + 'account/login', person);
   }
@@ -44,11 +44,11 @@ export class AuthService {
     return remainingTime;
   }
 
-    // Obtener el payload del token
+    // Para obtener el payload del token
     getDecodedToken() {
       return jwtDecode(this.getToken());
     }
-    
+
     // Obtiene el token
     getToken() {
       return localStorage.getItem('token') || '';

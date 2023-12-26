@@ -32,7 +32,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddAuthorization(); // Agregamos la autorización para poder usarla en los controladores
+builder.Services.AddAuthorization(); // Agregamos la autorizacion para poder usarla en los controladores
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JWT"));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -64,11 +64,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -79,8 +77,8 @@ app.UseRouting();
 
 app.UseCors("EnableCORS");
 
-app.UseAuthentication(); // Veo que el usuario este logeado
-app.UseAuthorization(); // Una vez logeado, veo los permisos que tiene
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllerRoute(
